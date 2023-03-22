@@ -35,16 +35,86 @@ void RenderNumber(int* _pNumber)
 	{
 		for (int j = 0; j < 5; j++) {
 			if (_pNumber[i * 5 + j] == INT_MAX)
-				cout << "*";
+				cout << "*" <<"\t";
 			else {
 				cout << _pNumber[i * 5 + j] << "\t";
 			}
 		}
+		cout << endl;
 	}
 }
-void Update(int* _pNumber)
+char Update(int* _pNumber)
 {
 	cout << "w: 위, s: 아래, a: 왼쪽, d: 오른쪽, q: 종료" << endl;
+	static int iStarIndex = 24;
+	char cInput = _getch();
+	switch (cInput)
+	{
+	case 'w':
+	case'W':
+	{
+		if (iStarIndex > 4)
+		{
+			_pNumber[iStarIndex] = _pNumber[iStarIndex - 5];
+			_pNumber[iStarIndex - 5] = INT_MAX;
+			iStarIndex -= 5;
+		}
+	}
+	break;
+	case 's':
+	case'S':
+	{
+		if (iStarIndex < 20)
+		{
+			_pNumber[iStarIndex] = _pNumber[iStarIndex + 5];
+			_pNumber[iStarIndex + 5] = INT_MAX;
+			iStarIndex += 5;
+		}
+	}
+	break;
+	case 'a':
+	case'A':
+	{
+		if (iStarIndex % 5 != 0)
+		{
+			_pNumber[iStarIndex] = _pNumber[iStarIndex - 1];
+			_pNumber[iStarIndex - 1] = INT_MAX;
+			iStarIndex -= 1;
+		}
+	}
+	break;
+	case 'd':
+	case'D':
+	{
+		if (iStarIndex % 5 != 4)
+		{
+			_pNumber[iStarIndex] = _pNumber[iStarIndex + 1];
+			_pNumber[iStarIndex + 1] = INT_MAX;
+			iStarIndex += 1;
+		}
+	}
+	break;
+	default:
+		break;
+	}
+	return cInput;
+}
+void PuzzleClear(int* _pNumber)
+{
+	bool bChk = true;
+	for (int i = 0; i < 24; i++)
+	{
+		if (_pNumber[i] != i + 1)
+		{
+			bChk = false;
+			break;
+		}
+	}
+	if (bChk == true)
+	{
+		cout << "다 맞췄습니다." << endl;
+		return;
+	}
 }
 int main()
 {
@@ -55,7 +125,10 @@ int main()
 	{
 		system("cls");
 		RenderNumber(iNumber);
-		Update(iNumber);
+		char cChk = Update(iNumber);
+		if (cChk == 'q' || cChk == 'Q') {
+			return 0;
+		}
+		PuzzleClear(iNumber);
 	}
-
 }
