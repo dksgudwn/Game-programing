@@ -9,6 +9,12 @@ enum class AI_MODE
 	AM_HARD
 	//HARD: 1) 가운데 무조건->양쪽 모서리 ->대각선 -> 가장 높은줄.
 };
+enum class LINE_NUMBER
+{
+	LN_H1, LN_H2, LN_H3, LN_H4, LN_H5,
+	LN_V1, LN_V2, LN_V3, LN_V4, LN_V5,
+	LN_LT, LN_RT
+};
 void Init(int* _pNumber)
 {
 	//셔플
@@ -137,9 +143,100 @@ int SelectAinumber(int* _pNumber, AI_MODE _eMode)
 		return iNoneSelect[rand() % iNoneSelectcnt];
 	}
 	break;
-	case AI_MODE::AM_NORMAL:
-		//
-		break;
+	case AI_MODE::AM_NORMAL:////////////////////////////////////////////////////////////////////////////////////////////////
+	{
+		int iLine = 0;
+		int iStarcnt = 0;
+		int iSavecnt = 0;
+		//줄을 찾을겁니다.
+		//가로줄
+		for (int i = 0; i < 5; i++)
+		{
+			iStarcnt = 0;
+			for (int j = 0; j < 5; j++)
+			{
+				if (_pNumber[i * 5 + j] == INT_MAX)
+					iStarcnt++;
+			}
+			//???
+			if (iStarcnt < 5 && iSavecnt < iStarcnt) //빙고줄을 바꾸는것 제일 많은 줄로
+			{
+				iLine = i;
+				iSavecnt = iStarcnt;
+			}
+		}
+		//세로줄
+		for (int i = 0; i < 5; i++)
+		{
+			iStarcnt = 0;
+			for (int j = 0; j < 5; j++)
+			{
+				if (_pNumber[j * 5 + i] == INT_MAX)
+					iStarcnt++;
+			}
+			//???
+			if (iStarcnt < 5 && iSavecnt < iStarcnt) //빙고줄을 바꾸는것 제일 많은 줄로
+			{
+				iLine = i + 5;
+				iSavecnt = iStarcnt;
+			}
+		}
+		//LT대각
+		iStarcnt = 0;
+		for (int i = 0; i < 25; i += 6)
+		{
+			iLine = i + 5;
+			iSavecnt = iStarcnt;
+		}
+		if (iStarcnt < 5 && iSavecnt < iStarcnt) //빙고줄을 바꾸는것 제일 많은 줄로
+		{
+			iLine = (int)LINE_NUMBER::LN_LT;
+			iSavecnt = iStarcnt;
+		}
+		//RT대각
+		iStarcnt = 0;
+		for (int i = 4; i < 20; i += 4)
+		{
+			iLine = i + 5;
+			iSavecnt = iStarcnt;
+		}
+		if (iStarcnt < 5 && iSavecnt < iStarcnt) //빙고줄을 바꾸는것 제일 많은 줄로
+		{
+			iLine = (int)LINE_NUMBER::LN_RT;
+			iSavecnt = iStarcnt;
+		}
+
+		if (iLine <= (int)LINE_NUMBER::LN_H5) {//가로줄
+			for (int i = 0; i < 5; i++)
+			{
+				if (_pNumber[iLine * 5 + i] != INT_MAX)
+					return _pNumber[iLine * 5 + i];
+			}
+		}
+		else if (iLine <= (int)LINE_NUMBER::LN_V5) {//세로줄
+			for (int i = 0; i < 5; i++)
+			{
+				if (_pNumber[i * 5 + (iLine - 5)] != INT_MAX)
+					return _pNumber[i * 5 + (iLine - 5)];
+			}
+		}
+		else if (iLine <= (int)LINE_NUMBER::LN_LT) {//대각줄
+			for (int i = 0; i < 25; i + 6)
+			{
+				if (_pNumber[i] != INT_MAX)
+					return _pNumber[i];
+			}
+		}
+		else if (iLine <= (int)LINE_NUMBER::LN_RT) {//대각줄
+			for (int i = 0; i < 20; i + 4)
+			{
+				if (_pNumber[i] != INT_MAX)
+					return _pNumber[i];
+			}
+		}
+		return -1;
+	}
+	break;
 	case AI_MODE::AM_HARD:
 		break;
 	default:
