@@ -1,5 +1,5 @@
 ﻿  소스.cpp
-C:\Users\user\Code\2gang\2gang\소스.cpp(9,77): warning C4305: '초기화 중': 'double'에서 'float'(으)로 잘립니다.
-C:\Users\user\Code\2gang\2gang\소스.cpp(17,13): warning C4244: '인수': 'float'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Users\user\Code\2gang\2gang\소스.cpp(25,16): warning C4244: '인수': 'float'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  2gang.vcxproj -> C:\Users\user\Code\2gang\x64\Debug\2gang.exe
+C:\Users\user\Code\GitHub\Game-programing\2gang\2gang\소스.cpp(21,16): warning C4244: '인수': 'float'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\Code\GitHub\Game-programing\2gang\2gang\소스.cpp(38,77): warning C4305: '초기화 중': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\user\Code\GitHub\Game-programing\2gang\2gang\소스.cpp(48,13): warning C4244: '인수': 'float'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  2gang.vcxproj -> C:\Users\user\Code\GitHub\Game-programing\2gang\x64\Debug\2gang.exe
