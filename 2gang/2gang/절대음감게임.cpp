@@ -4,7 +4,7 @@
 using namespace std;
 
 
-void playsound(float arr[])
+void playsound(const float arr[])
 {
 	int num = rand() % 8;
 	int input;
@@ -35,7 +35,7 @@ void playsound(float arr[])
 }
 int main()
 {
-	float arr[8]{ 523.25, 587.33, 659.29, 698.46, 783.99, 880, 987.77, 1046.50 };
+	const float arr[8]{ 523.25, 587.33, 659.29, 698.46, 783.99, 880, 987.77, 1046.50 };
 	string s[8]{ "도(0)","레(1)","미(2)","파(3)","솔(4)","라(5)","시(6)","도(7)" };
 	string ss;
 	srand((unsigned int)time(NULL));
