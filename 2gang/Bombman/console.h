@@ -10,6 +10,7 @@ enum class COLOR
 };
 void FullScreen();
 void Gotoxy(int, int);
+BOOL Gotoxytest(int, int);
 void Cursorset(bool _bVis, DWORD _dwSize);
 void SetColor(int, int);
 int GetColor();

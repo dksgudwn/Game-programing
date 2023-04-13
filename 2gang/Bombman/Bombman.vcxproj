@@ -129,6 +129,9 @@
   <ItemGroup>
     <ClCompile Include="console.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="test.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="console.h" />

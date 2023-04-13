@@ -13,6 +13,13 @@ void Gotoxy(int x, int y)
 	SetConsoleCursorPosition(hOut, Cur);
 }
 
+BOOL Gotoxytest(int x, int y)
+{
+	HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
+	COORD Cur = { x,y };
+	return SetConsoleCursorPosition(hOut, Cur);
+}
+
 void Cursorset(bool _bVis, DWORD _dwSize)
 {
 	HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
