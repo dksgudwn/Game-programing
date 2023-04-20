@@ -9,7 +9,11 @@ using namespace std;
 
 int main()
 {
-	system("mode con cols=80 lines=30");
+	char cMaze[VERTICAL][HORIZON] = {};
+	PLAYER tPlayer = {};
+	POS tStartpos = {};
+	POS tEndpos = {};
+	Init(cMaze, &tPlayer, &tStartpos, &tEndpos);
 	//시작씬 만들기.
 	while (true)
 	{
@@ -17,7 +21,9 @@ int main()
 		GameTitle();
 		int iMenu = MenuDraw();
 		if (iMenu == 0)
+		{
 			break;
+		}
 		else if (iMenu == 1)
 			GameInfo();
 		else if (iMenu == 2)
@@ -34,4 +40,12 @@ int main()
 		}
 	}
 	//게임 로직
+	while (true)
+	{
+		system("cls");
+		Render(cMaze, &tPlayer);
+		Update(cMaze, &tPlayer);
+
+	}
+
 }
