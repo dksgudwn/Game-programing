@@ -1,9 +1,11 @@
 ﻿#include<iostream>
 #include<Windows.h>
 #include<io.h>
+#include<vector>
 #include<fcntl.h>
 #include"StartScene.h"
 #include"GameLogic.h"
+#include "console.h"
 
 using namespace std;
 
@@ -13,6 +15,8 @@ int main()
 	PLAYER tPlayer = {};
 	POS tStartpos = {};
 	POS tEndpos = {};
+	vector<BOOM> vecBomb;
+	vector<POS> boomEffect;
 	Init(cMaze, &tPlayer, &tStartpos, &tEndpos);
 	//시작씬 만들기.
 	while (true)
@@ -39,12 +43,13 @@ int main()
 
 		}
 	}
+	system("cls");
 	//게임 로직
 	while (true)
 	{
-		system("cls");
-		Render(cMaze, &tPlayer);
-		Update(cMaze, &tPlayer);
+		Gotoxy(0, 0);
+		Render(cMaze, &tPlayer, boomEffect);
+		Update(cMaze, &tPlayer, vecBomb, boomEffect);
 
 	}
 
