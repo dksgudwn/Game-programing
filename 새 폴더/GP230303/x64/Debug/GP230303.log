@@ -1,3 +1,5 @@
 ﻿  7.빙고게임.cpp
-C:\Users\user\Code\GitHub\Game-programing\GP230303\7.빙고게임.cpp(177): warning C4715: 'SelectAinumber': 모든 제어 경로에서 값을 반환하지는 않습니다.
-  GP230303.vcxproj -> C:\Users\user\Code\GitHub\Game-programing\x64\Debug\GP230303.exe
+C:\Users\user\Code\GitHub\Game-programing\새 폴더\GP230303\7.빙고게임.cpp(224,30): warning C4552: '+': 식의 결과가 사용되지 않습니다.
+C:\Users\user\Code\GitHub\Game-programing\새 폴더\GP230303\7.빙고게임.cpp(231,30): warning C4552: '+': 식의 결과가 사용되지 않습니다.
+C:\Users\user\Code\GitHub\Game-programing\새 폴더\GP230303\7.빙고게임.cpp(245): warning C4715: 'SelectAinumber': 모든 제어 경로에서 값을 반환하지는 않습니다.
+  GP230303.vcxproj -> C:\Users\user\Code\GitHub\Game-programing\새 폴더\x64\Debug\GP230303.exe
