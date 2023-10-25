@@ -1,0 +1,6 @@
+﻿  BaseWindow.cpp
+  Core.cpp
+C:\Users\user\Code\GitHub\Game-programing\2023_winapi_framework\2023_winapi_framework\Core.cpp(19,18): warning C4244: '초기화 중': 'ULONGLONG'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\Code\GitHub\Game-programing\2023_winapi_framework\2023_winapi_framework\Core.cpp(20,10): warning C4244: '초기화 중': 'ULONGLONG'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Object.cpp
+  2023_winapi_framework.vcxproj -> C:\Users\user\Code\GitHub\Game-programing\2023_winapi_framework\x64\Debug\2023_winapi_framework.exe

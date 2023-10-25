@@ -1,2 +1,5 @@
 ﻿  main.cpp
+C:\Users\user\Code\GitHub\Game-programing\GPP\GPP\main.cpp(343,12): warning C4244: '인수': 'time_t'에서 'unsigned int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\Code\GitHub\Game-programing\GPP\GPP\main.cpp(395,7): warning C4244: '인수': 'float'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\Code\GitHub\Game-programing\GPP\GPP\main.cpp(396,7): warning C4244: '인수': 'float'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   GPP.vcxproj -> C:\Users\user\Code\GitHub\Game-programing\GPP\x64\Debug\GPP.exe

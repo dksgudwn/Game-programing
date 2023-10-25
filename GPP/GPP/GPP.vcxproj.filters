@@ -18,5 +18,24 @@
     <ClCompile Include="main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="StartScene.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="console.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="StartScene.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="console.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="random.mp3">
+      <Filter>소스 파일</Filter>
+    </Media>
   </ItemGroup>
 </Project>

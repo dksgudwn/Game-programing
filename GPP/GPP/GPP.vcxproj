@@ -127,7 +127,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="console.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="StartScene.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="console.h" />
+    <ClInclude Include="StartScene.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="random.mp3" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
